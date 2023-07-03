@@ -3,7 +3,9 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./css/syriac-transcriptor.css">
         <script src="./js/syriac-transcriptor.js" async></script>
-        <script src="./js/translitTable.js" async></script>
+        <script src="./js/translitOneToOne.js" async></script>
+        <script src="./js/translitEastern.js" async></script>
+        <script src="./js/translitWestern.js" async></script>
         <noscript>JavaScript is deactivated.</noscript>
         <title>Syriac Transliteration Converter</title>
     </head>
@@ -20,6 +22,12 @@
                 </div>
                 <div class="option-area">
                     <h2>Transliteration used <a href="./translit-table.html">(more info)</a></h2>
+                    <input id="one-to-one-transcription" type="radio" value="one-to-one" name="transcription-option" checked="checked"/>
+                    <label>One-to-one transliteration</label><br/>
+                    <input id="eastern-transcription" type="radio" value="eastern-vowels" name="transcription-option"/>
+                    <label>Transcription with Eastern vowels</label><br/>
+                    <input id="western-transcription" type="radio" value="western-vowels" name="transcription-option"/>
+                    <label>Transcription with Western vowels</label><br/>
                 </div>
             </div>
         </main>
