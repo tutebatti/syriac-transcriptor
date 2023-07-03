@@ -1,0 +1,63 @@
+body {
+    background-color: lightgrey;
+}
+
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 5%;
+    grid-template-rows: 65% 30%;
+    grid-row-gap: 5%;
+}
+
+.left-column {
+  grid-column: 1 / 2;
+}
+
+.right-column {
+  grid-column: 2 / 2;
+}
+
+.textinput {
+    width: 40%;
+    height: 60%;
+
+    position: absolute;
+    z-index: 2;
+
+    border: none;
+
+    padding: 20px;
+
+    resize: none;
+
+    background-color: white;
+    overflow: auto;
+
+    margin: 0;
+    border-radius: 0;
+}
+
+h2 {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+    font-family: "Linux Biolinum", sans-serif;
+    padding-bottom: 20px;
+}
+
+.syriac {
+    font-family: "Serto Batnan";
+    font-size: 16pt;
+    letter-spacing: 1px;
+}
+
+.latin {
+    font-family: "Linux Biolinum", sans-serif;
+    font-size: 12pt;
+    letter-spacing: 1px;
+}
