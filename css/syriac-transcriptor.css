@@ -2,6 +2,10 @@ body {
     background-color: lightgrey;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .container {
     margin: 0 auto;
     height: 100%;
@@ -21,24 +25,9 @@ body {
   grid-column: 2 / 2;
 }
 
-.textinput {
+.textinput, .backdrop {
     width: 40%;
     height: 60%;
-
-    position: absolute;
-    z-index: 2;
-
-    border: none;
-
-    padding: 20px;
-
-    resize: none;
-
-    background-color: white;
-    overflow: auto;
-
-    margin: 0;
-    border-radius: 0;
 }
 
 h2 {
@@ -60,6 +49,48 @@ h2 {
     font-family: "Linux Biolinum", sans-serif;
     font-size: 12pt;
     letter-spacing: 1px;
+}
+
+mark {
+    color: transparent;
+    background-color: #d4e9ab;
+    border-radius: 3px;
+}
+
+.backdrop {
+    position: absolute;
+    z-index: 1;
+
+    background-color: white;
+    overflow: auto;
+
+    border: 1px solid black;
+}
+
+.highlights {
+      color: pink;
+
+      padding: 18.5px;
+
+      white-space: pre-wrap;
+      word-wrap: break-word;
+}
+
+.textinput{
+    position: absolute;
+    z-index: 2;
+
+    border: none;
+
+    padding: 20px;
+
+    resize: none;
+
+    background-color: transparent;
+    overflow: auto;
+
+    margin: 0;
+    border-radius: 0;
 }
 
 /* log area */

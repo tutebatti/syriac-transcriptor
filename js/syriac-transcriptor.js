@@ -4,7 +4,10 @@ let syriacText;
 let latinText;
 
 let syriacTextarea = document.getElementById('syriac-textarea');
+let syriacHighlights = document.getElementById('syriac-highlights');
+
 let latinTextarea = document.getElementById('latin-textarea');
+let latinHighlights = document.getElementById('latin-highlights');
 
 let logOutput = document.getElementById('log-output');
 
@@ -64,14 +67,18 @@ function transliterateToSyriac(inputText) {
 
 function applyLatinTranscription() {
     syriacText = syriacTextarea.value;
+    syriacHighlights.innerHTML = syriacTextarea.value;
     latinText = transliterateToLatin(syriacText);
     latinTextarea.value = latinText;
+    latinHighlights.innerHTML = latinText;
 };
 
 function applySyriacTranscription() {
     latinText = latinTextarea.value;
+    latinHighlights.innerHTML = latinTextarea.value;
     syriacText = transliterateToSyriac(latinText);
     syriacTextarea.value = syriacText;
+    syriacHighlights.innerHTML = syriacText;
 };
 
 syriacTextarea.addEventListener('keyup', () => {
@@ -92,6 +99,12 @@ function getSelection() {
     let selectionEnd = txtarea.selectionEnd;
 
     let selectionText = [syriacText.substring(selectionStart, selectionEnd), '<br/><br/>', latinText.substring(selectionStart, selectionEnd)].join('');
+
+    let highlightedSyriacText = [syriacText.slice(0, selectionStart), '<mark>', syriacText.slice(selectionStart, selectionEnd), '</mark>', syriacText.slice(selectionEnd)].join('');
+    let highlightedLatinText = [latinText.slice(0, selectionStart), '<mark>', latinText.slice(selectionStart, selectionEnd), '</mark>', latinText.slice(selectionEnd)].join('');
+
+    syriacHighlights.innerHTML = highlightedSyriacText;
+    latinHighlights.innerHTML = highlightedLatinText;
 
     logOutput.innerHTML = selectionText;
 }
