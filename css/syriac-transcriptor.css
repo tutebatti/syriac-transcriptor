@@ -61,3 +61,46 @@ h2 {
     font-size: 12pt;
     letter-spacing: 1px;
 }
+
+table {
+    margin: 0 auto;
+    background: white;
+    width: 80%;
+    border: 0.5px solid black;
+    border-collapse: collapse;
+}
+
+th {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border: 0.5px solid black;
+    border-collapse: collapse;
+    font-family: "Linux Biolinum", sans-serif !important;
+    font-size: 12pt !important;
+    letter-spacing: 1px !important;
+}
+
+td {
+    text-align: center !important;
+    border: 0.5px solid black;
+    border-collapse: collapse;
+}
+
+td:first-of-type {
+    font-family: "Serto Batnan";
+    font-size: 16pt;
+    letter-spacing: 1px;
+}
+
+td:last-of-type {
+    font-family: "Linux Biolinum", sans-serif;
+    font-size: 12pt;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(odd){
+    background-color: lightgrey;
+    color: black;
+}  
