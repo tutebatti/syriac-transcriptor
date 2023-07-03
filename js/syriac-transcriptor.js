@@ -6,6 +6,8 @@ let latinText;
 let syriacTextarea = document.getElementById('syriac-textarea');
 let latinTextarea = document.getElementById('latin-textarea');
 
+let logOutput = document.getElementById('log-output');
+
 let transcriptionOption = document.querySelector('input[name = "transcription-option"]:checked').value;
 
 function transliterateToLatin(inputText) {
@@ -80,14 +82,31 @@ latinTextarea.addEventListener('keyup', () => {
     applySyriacTranscription();
 });
 
+function getSelection() {
+    syriacText = syriacTextarea.value;
+    latinText = latinTextarea.value;
+
+    let txtarea = document.activeElement;
+
+    let selectionStart = txtarea.selectionStart;
+    let selectionEnd = txtarea.selectionEnd;
+
+    let selectionText = [syriacText.substring(selectionStart, selectionEnd), '<br/><br/>', latinText.substring(selectionStart, selectionEnd)].join('');
+
+    logOutput.innerHTML = selectionText;
+}
+
+syriacTextarea.addEventListener('click', getSelection);
+latinTextarea.addEventListener('click', getSelection);
+
 document.getElementById("one-to-one-transcription").addEventListener('click', () => {
     applyLatinTranscription();
-  });
+});
 
   document.getElementById("eastern-transcription").addEventListener('click', () => {
     applyLatinTranscription();
-  });
+});
 
   document.getElementById("western-transcription").addEventListener('click', () => {
     applyLatinTranscription();
-  });
+});
